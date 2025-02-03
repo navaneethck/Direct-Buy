@@ -36,14 +36,14 @@ let Images = ImageList[index]
        <div className='flex flex-col items-center'>
 
         
-      <div className=" relative w-80 h-80 bg-white shadow-lg rounded-lg flex items-center justify-center mt-32">
+      <div className=" relative w-120 h-96 bg-gray-200 rounded-lg flex items-center justify-center mt-32">
 
       <button onClick={handlePreviousClick}  className="absolute left-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
             <span className="text-xl ">&lt;</span> 
           </button>
 
-      <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-            <img src={Images.url} alt={Images.alt} />  <h1>{Images.name}</h1>
+      <div className=" flex items-center justify-center">
+            <img src={Images.url} alt={Images.alt} className=' absolute w-120 h-96  object-cover shadow-black shadow-2xl rounded-lg '/>  <h1>{Images.name}</h1>
           </div>
 
           <button onClick={handleNextClick}  className="absolute right-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
