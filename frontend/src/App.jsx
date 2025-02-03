@@ -1,9 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ImageList } from './images';
+
+
+
+
 
 function CenteredBox() {
+
+const [index,setIndex]=useState(0);
+
+let prev = index>0
+let Next = index<ImageList.length-1
+
+const handleNextClick=()=>{
+if(Next){
+  setIndex(index+1);
+}
+
+}
+
+const handlePreviousClick=()=>{
+  if(prev){
+    setIndex(index-1)
+  }
+ 
+}
+
+let Images = ImageList[index]
   return (
     <div className="h-screen  flex items-center justify-center bg-gray-700 relative">
 
@@ -15,15 +38,15 @@ function CenteredBox() {
         
       <div className=" relative w-80 h-80 bg-white shadow-lg rounded-lg flex items-center justify-center mt-32">
 
-      <button className="absolute left-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
+      <button onClick={handlePreviousClick}  className="absolute left-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
             <span className="text-xl ">&lt;</span> 
           </button>
 
       <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-            Your Content Here
+            <img src={Images.url} alt={Images.alt} />  <h1>{Images.name}</h1>
           </div>
 
-          <button className="absolute right-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
+          <button onClick={handleNextClick}  className="absolute right-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
             <span className="text-xl ">&gt;</span> 
           </button>
 
