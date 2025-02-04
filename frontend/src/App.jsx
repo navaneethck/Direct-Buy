@@ -36,14 +36,28 @@ let Images = ImageList[index]
        <div className='flex flex-col items-center'>
 
         
-      <div className=" relative w-120 h-96 bg-gray-200 rounded-lg flex items-center justify-center mt-32">
+      <div className=" relative w-120 h-96 bg-gray-200 rounded-2xl flex items-center justify-center mt-32">
 
       <button onClick={handlePreviousClick}  className="absolute left-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
             <span className="text-xl ">&lt;</span> 
           </button>
 
       <div className=" flex items-center justify-center">
-            <img src={Images.url} alt={Images.alt} className=' absolute w-120 h-96  object-cover shadow-black shadow-2xl rounded-lg '/>  <h1>{Images.name}</h1>
+            <img src={Images.url} alt={Images.alt} className=' absolute w-120 h-96  object-cover shadow-black shadow-2xl rounded-2xl '/> 
+          </div>
+
+          <div className='bg-white absolute w-120 h-15 mt-96 shadow-2xl'>
+
+            <div className='flex justify-center items-center flex-col'>
+
+            <h2 className=' text-2xl font-normal '>{Images.name}</h2>
+            <h3 className='italic'>"{Images.description}"</h3>
+
+            </div>
+
+           
+
+           
           </div>
 
           <button onClick={handleNextClick}  className="absolute right-[-40px] p-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer">
@@ -52,7 +66,7 @@ let Images = ImageList[index]
 
       </div>
      
-      <button className=' mt-4 font-bold bg-amber-300 w-70 h-10 rounded-lg  transition duration-400 ease-in-out hover:bg-amber-400 hover:scale-105 active:scale-95 cursor-pointer'>Add To Cart</button>
+      <button className=' mt-20 font-bold bg-amber-300 w-70 h-10 rounded-lg  transition duration-400 ease-in-out hover:bg-amber-400 hover:scale-105 active:scale-95 cursor-pointer'>Add To Cart</button>
       </div>
     </div>
   );
