@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { ImageList } from './images';
+import {Routes,Route,useNavigate} from 'react-router-dom'
 
+import CartPage from './cart'
 
 
 
@@ -8,6 +10,7 @@ import { ImageList } from './images';
 function CenteredBox() {
 
 const [index,setIndex]=useState(0);
+const navigate = useNavigate()
 
 let prev = index>0
 let Next = index<ImageList.length-1
@@ -66,7 +69,7 @@ let Images = ImageList[index]
 
       </div>
      
-      <button className=' mt-20 font-bold bg-amber-300 w-70 h-10 rounded-lg  transition duration-400 ease-in-out hover:bg-amber-400 hover:scale-105 active:scale-95 cursor-pointer'>Add To Cart</button>
+      <button onClick={()=>navigate('/cart')}   className=' mt-20 font-bold bg-amber-300 w-70 h-10 rounded-lg  transition duration-400 ease-in-out hover:bg-amber-400 hover:scale-105 active:scale-95 cursor-pointer'>Add To Cart</button>
       </div>
     </div>
   );
@@ -74,9 +77,14 @@ let Images = ImageList[index]
 
 function App() {
   return (
-    <div>
-      <CenteredBox />
-    </div>
+    // <div>
+    //   <CenteredBox />
+    //   <CartPage/>
+    // </div>
+    <Routes>
+     <Route path= "/" element={<CenteredBox/>}/>
+     <Route path="/cart" element={<CartPage/>}/>
+    </Routes>
   );
 }
 
