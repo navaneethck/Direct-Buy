@@ -1,3 +1,5 @@
+
+
 const CartPage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-700">
@@ -9,13 +11,13 @@ const CartPage = () => {
           <div className="border p-4 rounded-lg mb-4 flex">
             {/* Product Image */}
             <img 
-              src="https://via.placeholder.com/100" 
-              alt="Shoe" 
+              src="image"
+              alt="image"
               className="w-24 h-24 object-cover mr-4" 
             />
             
             <div className="ml-20">
-              <h3 className="font-semibold">Product Name</h3>
+              <h3 className="font-semibold">name</h3>
               <p>Price: $XX.XX</p>
               
               {/* Size Selection */}

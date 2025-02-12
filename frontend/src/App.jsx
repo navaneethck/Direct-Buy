@@ -5,9 +5,7 @@ import {Routes,Route,useNavigate} from 'react-router-dom'
 import CartPage from './cart'
 
 
-
-
-function CenteredBox() {
+export function CenteredBox() {
 
 const [index,setIndex]=useState(0);
 const navigate = useNavigate()

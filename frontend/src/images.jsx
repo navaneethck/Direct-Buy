@@ -4,6 +4,7 @@ import boot3 from './assets/images/boot3.jpg';
 
 export const ImageList =[{
 
+    id:1,
     name:"Ireland Leather Boot-watch-wallet",
     description :"Combo of three",
     url:boot1,
@@ -12,6 +13,7 @@ export const ImageList =[{
 },
 
 {
+    id:2,
     name:"Mountain Scotish Boot",
     description :"for mountain enthusiastic ! ",
     url:boot2,
@@ -20,6 +22,7 @@ export const ImageList =[{
 },
 
 {
+    id:3,
     name:"Indian Trucking Boot",
     description :"for Trucking Wizards !",
     url:boot3,
