@@ -8,7 +8,8 @@ export const ImageList =[{
     name:"Ireland Leather Boot-watch-wallet",
     description :"Combo of three",
     url:boot1,
-    alt:"coombo image"
+    alt:"coombo image",
+    price: "$45"
 
 },
 
@@ -17,7 +18,8 @@ export const ImageList =[{
     name:"Mountain Scotish Boot",
     description :"for mountain enthusiastic ! ",
     url:boot2,
-    alt:"Scotish Boot"
+    alt:"Scotish Boot",
+    price: "$50"
 
 },
 
@@ -26,7 +28,8 @@ export const ImageList =[{
     name:"Indian Trucking Boot",
     description :"for Trucking Wizards !",
     url:boot3,
-    alt:"Indian Boot"
+    alt:"Indian Boot",
+    price: "$40"
 
 }]
 
