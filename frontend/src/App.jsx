@@ -3,6 +3,7 @@ import { ImageList } from './images';
 import {Routes,Route,useNavigate} from 'react-router-dom'
 import { CartContext, useCart} from './cartContext';
 import CartPage from './cart'
+import PaymentPage from './payment';
 
 
 export function CenteredBox() {
@@ -81,6 +82,7 @@ function App() {
     <Routes>
      <Route path= "/" element={<CenteredBox/>}/>
      <Route path="/cart" element={<CartPage/>}/>
+     <Route path='/checkout' element={<PaymentPage/>}></Route>
     </Routes>
     </CartContext>
   );

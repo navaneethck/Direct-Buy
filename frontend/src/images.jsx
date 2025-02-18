@@ -9,7 +9,7 @@ export const ImageList =[{
     description :"Combo of three",
     url:boot1,
     alt:"coombo image",
-    price: "$45"
+    price: 45
 
 },
 
@@ -19,7 +19,7 @@ export const ImageList =[{
     description :"for mountain enthusiastic ! ",
     url:boot2,
     alt:"Scotish Boot",
-    price: "$50"
+    price: 50
 
 },
 
@@ -29,7 +29,7 @@ export const ImageList =[{
     description :"for Trucking Wizards !",
     url:boot3,
     alt:"Indian Boot",
-    price: "$40"
+    price: 40
 
 }]
 
