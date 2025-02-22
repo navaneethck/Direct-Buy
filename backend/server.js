@@ -1,11 +1,14 @@
 
 require('dotenv').config();
-
 const mongoose = require('mongoose');
-
 const mongo_URI = process.env.MONGO_URI;
+const cors = require('cors');
 
-const schema = require('./model/trailSchema')
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
 
 
 
