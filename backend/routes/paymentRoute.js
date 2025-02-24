@@ -2,7 +2,7 @@ const express = require('express');
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 const Order = require('../model/orderSchema');
-const Razorpay = require('razorpay');
+
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.post("/upi",async(req,res)=>{
 
         const order = await razorpay.orders.create({
             amount:totalAmount,
-            currancy:"INR",
+            currency:"INR",
             payment_capture:1
 
         })
@@ -51,24 +51,24 @@ router.post("/card",async(req,res)=>{
 
     try{
 
-    const {items,totalPayment,address} = req.body;
+    const {items,totalAmount,address} = req.body;
 
     const order = await razorpay.orders.create({
-        payment:totalPayment,
+        amount:totalAmount,
         currency:"INR",
-        payment_capture:1,
+        payment_capture:1
     })
 
     const newOrder = new Order({
         items,
-        totalPayment,
+        totalAmount,
         address,
         paymentMethod:"CARD",
         paymentStatus:"PENDING",
         transactioinId:order.id,
     })
 
-    await order.save();
+    await newOrder.save();
 
     res.json({
         success:true,
@@ -96,9 +96,8 @@ router.post("/verify",async(req,res)=>{
 
         if(expectedSignature === razorpay_signature){
             await Order.findOneAndUpdate(
-                {
-                    transactionId: razorpay_order_id,paymentStatus:"SUCCESS"
-                }
+                { transactionId: razorpay_order_id },
+                { paymentStatus: "SUCCESS" } 
             )
             res.json({success: true, message: "Payment Verified"})
         }else{

@@ -12,4 +12,4 @@ const orderSchema= new mongoose.Schema({
 
 
 
-module.exports = mongoose.model('Trial',orderSchema);
+module.exports = mongoose.model('Order',orderSchema);
