@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
 const orderSchema= new mongoose.Schema({
+    order_id: String, 
     items:[{ name : String, price :Number}],
     totalAmount: Number,
     address: String,
-    paymentMethod: String, // 'UPI' or 'CARD'
-    paymentStatus: { type: String, default: "PENDING" }, // PENDING, SUCCESS, FAILED
+    paymentMethod: String, 
+    paymentStatus: { type: String, default: "PENDING" }, 
     transactionId: String,
     createdAt: { type: Date, default: Date.now },
 });
