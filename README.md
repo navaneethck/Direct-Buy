@@ -19,7 +19,8 @@ Usage:
 Select a product and add it to the cart.
 Go to the cart page and enter the delivery address.
 Proceed to checkout and complete the payment using Razorpay.
-Future Enhancements
+
+Future Enhancements:
 Add user authentication
 Implement order history
 Integrate more payment methods
