@@ -28,12 +28,12 @@ const CartPage = () => {
           <p className="text-gray-500">Your cart is empty.</p>
         ) : (
           <div>
-            {cart.map((item, index) => (
-              <div key={index} className="border p-4 rounded-lg mb-4 flex">
+            {cart.map((item) => (
+              <div key={item.id} className="border p-4 rounded-lg mb-4 flex">
                 <img src={item.url} alt={item.alt} className="w-24 h-24 object-cover mr-4" />
                 <div className="ml-20">
                   <h3 className="font-semibold">{item.name}</h3>
-                  <p>Price: ${item.price}</p>
+                  <p>Price: INR <b>{item.price}</b></p>
 
                   <div className="flex mt-2">
                     <label className="block mt-2">Size -</label>
@@ -46,7 +46,7 @@ const CartPage = () => {
                     </select>
                   </div>
 
-                  <button onClick={() => removeFromCart(item.name)} className="mt-2 bg-red-500 text-white px-3 py-1 rounded cursor-pointer">
+                  <button onClick={() => removeFromCart(item.id)} className="mt-2 bg-red-500 text-white px-3 py-1 rounded cursor-pointer">
                     Remove
                   </button>
                 </div>

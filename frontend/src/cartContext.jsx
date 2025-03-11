@@ -7,11 +7,13 @@ export function CartContext({children}){
     const [cart,setCart] = useState([]);
 
     const addToCart = (item)=>{
+      
         setCart((prevCart)=>[...prevCart,item]);
     }
 
-    const removeFromCart = (itemName)=>{
-        setCart((prevCart)=>prevCart.filter((cartItem)=>cartItem.name!==itemName));
+    const removeFromCart = (itemId)=>{
+
+        setCart((prevCart)=>prevCart.filter((cartItem)=>cartItem.id!==itemId))
     }
 
     return (

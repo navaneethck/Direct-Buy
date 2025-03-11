@@ -4,6 +4,8 @@ import {Routes,Route,useNavigate} from 'react-router-dom'
 import { CartContext, useCart} from './cartContext';
 import CartPage from './cart'
 import PaymentPage from './payment';
+import Success from "./success";
+
 
 
 export function CenteredBox() {
@@ -69,7 +71,7 @@ let Images = ImageList[index]
 
       </div>
      
-      <button onClick={()=>{addToCart({name:Images.name,url:Images.url,price:Images.price});navigate('/cart')}}   className=' mt-20 font-bold bg-amber-300 w-70 h-10 rounded-lg  transition duration-400 ease-in-out hover:bg-amber-400 hover:scale-105 active:scale-95 cursor-pointer'>Add To Cart</button>
+      <button onClick={()=>{addToCart({id: Images.id,name:Images.name,url:Images.url,price:Images.price});navigate('/cart')}}   className=' mt-20 font-bold bg-amber-300 w-70 h-10 rounded-lg  transition duration-400 ease-in-out hover:bg-amber-400 hover:scale-105 active:scale-95 cursor-pointer'>Add To Cart</button>
       </div>
     </div>
   );
@@ -82,11 +84,14 @@ function App() {
     <Routes>
      <Route path= "/" element={<CenteredBox/>}/>
      <Route path="/cart" element={<CartPage/>}/>
+     <Route path="/success" element={<Success />} />
      <Route path='/checkout' element={<PaymentPage/>}></Route>
     </Routes>
     </CartContext>
   );
 }
+
+
 
 export default App;
 
