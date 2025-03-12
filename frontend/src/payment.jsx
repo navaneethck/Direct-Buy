@@ -19,7 +19,7 @@ const PaymentPage = () => {
         }
   
         // Create order on backend
-        const response = await fetch("http://localhost:3100/api/payment/create-order", {
+        const response = await fetch( `${import.meta.env.VITE_API_URL}/api/payment/create-order`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ amount: TotalPrice, currency: "INR", receipt: "receipt#1", notes: {} }),
@@ -41,7 +41,7 @@ const PaymentPage = () => {
           },
           theme: { color: "#F37254" },
           handler: function (response) {
-            fetch("http://localhost:3100/api/payment/verify", {
+            fetch(`${import.meta.env.VITE_API_URL}/api/payment/verify`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -53,7 +53,10 @@ const PaymentPage = () => {
               .then((res) => res.json())
               .then((data) => {
                 if (data.status === "ok") {
-                  window.location.href = "http://localhost:5173/success";
+                  window.location.href = `${
+                    import.meta.env.VITE_FRONTEND_URL || "http://localhost:5173"
+                  }/success`;
+                  
                 } else {
                   alert("Payment verification failed!");
                 }
