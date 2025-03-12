@@ -49,11 +49,11 @@ router.post('/create-order',async (req,res)=>{
     }
 })
 
-router.get('/payment-success',(req,res)=>{
 
-    res.redirect('http://localhost:5173/success')
+router.get('/payment-success', (req, res) => {
+  res.redirect(process.env.FRONTEND_URL || 'http://localhost:5173/success');
+});
 
-})
 
 
 router.post("/verify", async (req, res) => {
